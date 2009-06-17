@@ -11,6 +11,10 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		B1234D660FE79EF100FC767C /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1234D650FE79EF100FC767C /* AppController.m */; };
+		B1234D6B0FE79F6600FC767C /* WMPasswordComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1234D6A0FE79F6600FC767C /* WMPasswordComposer.m */; };
+		B1234D730FE7AB3D00FC767C /* NSDataBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = B1234D720FE7AB3D00FC767C /* NSDataBase64.m */; };
+		B1234D790FE7BE7000FC767C /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B1234D780FE7BE7000FC767C /* libcrypto.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,13 @@
 		32CA4F630368D1EE00C91783 /* Password Composer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Password Composer_Prefix.pch"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Password Composer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Composer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1234D640FE79EF100FC767C /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		B1234D650FE79EF100FC767C /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		B1234D690FE79F6600FC767C /* WMPasswordComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPasswordComposer.h; sourceTree = "<group>"; };
+		B1234D6A0FE79F6600FC767C /* WMPasswordComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPasswordComposer.m; sourceTree = "<group>"; };
+		B1234D710FE7AB3D00FC767C /* NSDataBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataBase64.h; sourceTree = "<group>"; };
+		B1234D720FE7AB3D00FC767C /* NSDataBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataBase64.m; sourceTree = "<group>"; };
+		B1234D780FE7BE7000FC767C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				B1234D790FE7BE7000FC767C /* libcrypto.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +53,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B1234D690FE79F6600FC767C /* WMPasswordComposer.h */,
+				B1234D6A0FE79F6600FC767C /* WMPasswordComposer.m */,
+				B1234D640FE79EF100FC767C /* AppController.h */,
+				B1234D650FE79EF100FC767C /* AppController.m */,
+				B1234D710FE7AB3D00FC767C /* NSDataBase64.h */,
+				B1234D720FE7AB3D00FC767C /* NSDataBase64.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -48,6 +66,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B1234D780FE7BE7000FC767C /* libcrypto.dylib */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -167,6 +186,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				B1234D660FE79EF100FC767C /* AppController.m in Sources */,
+				B1234D6B0FE79F6600FC767C /* WMPasswordComposer.m in Sources */,
+				B1234D730FE7AB3D00FC767C /* NSDataBase64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
