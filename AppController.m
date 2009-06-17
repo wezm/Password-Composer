@@ -1,10 +1,16 @@
 #import "AppController.h"
-#import "WMPasswordComposer.h"
 
 @implementation AppController
 
+- (id)init {
+	if((self = [super init]) != nil) {
+		composer = [[WMPasswordComposer alloc] init];
+	}
+	
+	return self;
+}
+
 - (IBAction)generatePassword:(id)sender {
-    WMPasswordComposer *composer = [[WMPasswordComposer alloc] init];
 	NSString *pw = [composer generatePasswordForDomain:[domain stringValue] withMasterPassword:[master_password stringValue]];
 	NSPasteboard *pasteboard = [NSPasteboard pasteboardWithName:NSGeneralPboard];
 
@@ -13,8 +19,20 @@
 
 	[message_label setStringValue:@"Copied"];
 	[message_label setHidden:NO];
-	
+
+	// Cancel any other pending delayed methods
+	[self performSelector:@selector(hideMessageLabel) withObject:nil afterDelay:2.0];
+}
+
+- (void)hideMessageLabel {
+	[message_label setHidden:YES];
+	NSLog(@"hideMessageLobel");
+}
+
+- (void)dealloc {
 	[composer release];
+	
+	[super dealloc];
 }
 
 @end
