@@ -1,4 +1,5 @@
 #import "AppController.h"
+#import "WMFrontmostBrowser.h"
 
 @implementation AppController
 
@@ -20,6 +21,10 @@
 	[message_label setStringValue:@"Copied"];
 	[message_label setHidden:NO];
 
+	WMFrontmostBrowser *browser = [[WMFrontmostBrowser alloc] init];
+	[browser activeBrowser];
+	[browser release];
+	
 	// Cancel any other pending delayed methods
 	[self performSelector:@selector(hideMessageLabel) withObject:nil afterDelay:2.0];
 }

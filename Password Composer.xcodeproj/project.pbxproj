@@ -15,6 +15,7 @@
 		B1234D6B0FE79F6600FC767C /* WMPasswordComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1234D6A0FE79F6600FC767C /* WMPasswordComposer.m */; };
 		B1234D730FE7AB3D00FC767C /* NSDataBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = B1234D720FE7AB3D00FC767C /* NSDataBase64.m */; };
 		B1234D790FE7BE7000FC767C /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B1234D780FE7BE7000FC767C /* libcrypto.dylib */; };
+		B1234E1A0FEE31FE00FC767C /* WMFrontmostBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = B1234E190FEE31FE00FC767C /* WMFrontmostBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,9 @@
 		B1234D710FE7AB3D00FC767C /* NSDataBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataBase64.h; sourceTree = "<group>"; };
 		B1234D720FE7AB3D00FC767C /* NSDataBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataBase64.m; sourceTree = "<group>"; };
 		B1234D780FE7BE7000FC767C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
+		B1234E130FEE316E00FC767C /* Password Composer.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.scpt; path = "Password Composer.scpt"; sourceTree = "<group>"; };
+		B1234E180FEE31FE00FC767C /* WMFrontmostBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMFrontmostBrowser.h; sourceTree = "<group>"; };
+		B1234E190FEE31FE00FC767C /* WMFrontmostBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMFrontmostBrowser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				B1234D650FE79EF100FC767C /* AppController.m */,
 				B1234D710FE7AB3D00FC767C /* NSDataBase64.h */,
 				B1234D720FE7AB3D00FC767C /* NSDataBase64.m */,
+				B1234E180FEE31FE00FC767C /* WMFrontmostBrowser.h */,
+				B1234E190FEE31FE00FC767C /* WMFrontmostBrowser.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -114,6 +120,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B1234E130FEE316E00FC767C /* Password Composer.scpt */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -189,6 +196,7 @@
 				B1234D660FE79EF100FC767C /* AppController.m in Sources */,
 				B1234D6B0FE79F6600FC767C /* WMPasswordComposer.m in Sources */,
 				B1234D730FE7AB3D00FC767C /* NSDataBase64.m in Sources */,
+				B1234E1A0FEE31FE00FC767C /* WMFrontmostBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
