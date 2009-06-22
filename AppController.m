@@ -3,12 +3,15 @@
 
 @implementation AppController
 
-- (id)init {
-	if((self = [super init]) != nil) {
-		composer = [[WMPasswordComposer alloc] init];
-	}
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	NSStatusBar *status_bar = [NSStatusBar systemStatusBar];
+	composer = [[WMPasswordComposer alloc] init];
 	
-	return self;
+	status_item = [status_bar statusItemWithLength:NSSquareStatusItemLength];
+	[status_item setTitle:@"★"];
+	[status_item setMenu:status_item_menu];
+	
+	[status_item retain];
 }
 
 - (IBAction)generatePassword:(id)sender {
@@ -21,21 +24,25 @@
 	[message_label setStringValue:@"Copied"];
 	[message_label setHidden:NO];
 
-	WMFrontmostBrowser *browser = [[WMFrontmostBrowser alloc] init];
-	[browser activeBrowser];
-	[browser release];
-	
 	// Cancel any other pending delayed methods
 	[self performSelector:@selector(hideMessageLabel) withObject:nil afterDelay:2.0];
 }
 
+- (IBAction)getHostnameFromBrowser:(id)sender {
+	WMFrontmostBrowser *browser = [[WMFrontmostBrowser alloc] init];
+	
+	[browser activeBrowser];
+	
+	[browser release];
+}
+
 - (void)hideMessageLabel {
 	[message_label setHidden:YES];
-	NSLog(@"hideMessageLobel");
 }
 
 - (void)dealloc {
-	[composer release];
+	if(composer) [composer release];
+	if(status_item) [status_item release];
 	
 	[super dealloc];
 }
