@@ -30,6 +30,7 @@
 		B1234D790FE7BE7000FC767C /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B1234D780FE7BE7000FC767C /* libcrypto.dylib */; };
 		B1234E1A0FEE31FE00FC767C /* WMFrontmostBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = B1234E190FEE31FE00FC767C /* WMFrontmostBrowser.m */; };
 		B1BB3BB80FF0D72F008A1E21 /* Browser Scripting.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = B1BB3BB70FF0D72F008A1E21 /* Browser Scripting.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		B1BB3C6E0FF10246008A1E21 /* BNZHex.m in Sources */ = {isa = PBXBuildFile; fileRef = B1BB3C6D0FF10246008A1E21 /* BNZHex.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,10 @@
 		B1234E180FEE31FE00FC767C /* WMFrontmostBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMFrontmostBrowser.h; sourceTree = "<group>"; };
 		B1234E190FEE31FE00FC767C /* WMFrontmostBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMFrontmostBrowser.m; sourceTree = "<group>"; };
 		B1BB3BB70FF0D72F008A1E21 /* Browser Scripting.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = "Browser Scripting.applescript"; sourceTree = "<group>"; };
+		B1BB3C6C0FF10246008A1E21 /* BNZHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNZHex.h; sourceTree = "<group>"; };
+		B1BB3C6D0FF10246008A1E21 /* BNZHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNZHex.m; sourceTree = "<group>"; };
+		B1BB3C700FF10288008A1E21 /* NOTES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NOTES; sourceTree = "<group>"; };
+		B1BB3C710FF102A5008A1E21 /* THANKS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = THANKS; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +76,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B1BB3C6C0FF10246008A1E21 /* BNZHex.h */,
+				B1BB3C6D0FF10246008A1E21 /* BNZHex.m */,
 				B1234D690FE79F6600FC767C /* WMPasswordComposer.h */,
 				B1234D6A0FE79F6600FC767C /* WMPasswordComposer.m */,
 				B1234D640FE79EF100FC767C /* AppController.h */,
@@ -113,6 +120,7 @@
 		29B97314FDCFA39411CA2CEA /* Password Composer */ = {
 			isa = PBXGroup;
 			children = (
+				B1BB3C6F0FF10273008A1E21 /* Documentation */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -149,6 +157,15 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1BB3C6F0FF10273008A1E21 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				B1BB3C700FF10288008A1E21 /* NOTES */,
+				B1BB3C710FF102A5008A1E21 /* THANKS */,
+			);
+			name = Documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +229,7 @@
 				B1234D6B0FE79F6600FC767C /* WMPasswordComposer.m in Sources */,
 				B1234D730FE7AB3D00FC767C /* NSDataBase64.m in Sources */,
 				B1234E1A0FEE31FE00FC767C /* WMFrontmostBrowser.m in Sources */,
+				B1BB3C6E0FF10246008A1E21 /* BNZHex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

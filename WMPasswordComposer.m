@@ -9,6 +9,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "WMPasswordComposer.h"
 #import "NSDataBase64.h"
+#import "BNZHex.h"
 
 @implementation WMPasswordComposer
 
@@ -26,17 +27,51 @@
 {
 	const char *data;
 	NSData *result;
-	unsigned char sha1[CC_SHA1_DIGEST_LENGTH];
 	NSString *string_data = [NSString stringWithFormat:@"%@:%@", master_pass, domain];
-	NSString *password;
+	NSMutableString *password;
 	
 	data = [string_data UTF8String];
-	CC_SHA1(data, strlen(data), sha1);
+	switch(digest_method) {
+		case WMPasswordComposerMD5Digest:
+			result = [[self class] md5:data];
+			break;
+		case WMPasswordComposerSHA1Digest:
+			result = [[self class] sha1:data];
+			break;
+		default:
+			NSLog(@"generatePasswordForDomain: Unknown digest type");
+			return nil;
+	}
 
-	result = [NSData dataWithBytes:sha1 length:CC_SHA1_DIGEST_LENGTH];
-	password = [[[result stringWithBase64Encoding] substringWithRange:NSMakeRange(0, 8)] stringByAppendingString:@"1e"];
+	if(base64_encode) {
+		password = [NSMutableString stringWithString:[result stringWithBase64Encoding]];
+	}
+	else {
+		password = [NSMutableString stringWithString:[result hexString]];
+	}
+
+	NSRange truncate_range = NSMakeRange(WMPasswordComposerBaseLen, [password length] - WMPasswordComposerBaseLen);
+	[password deleteCharactersInRange:truncate_range];
 	
-	return [password retain];
+	if(ensure_alphanumeric) [password appendString:@"1e"];
+	
+	return password;
 }
+
+// This is ugly and should be a category or a protocol and classes or something
++ (NSData *)md5:(const char *)data {
+	unsigned char digest[CC_MD5_DIGEST_LENGTH];
+	
+	CC_MD5(data, strlen(data), digest);
+	return [NSData dataWithBytes:digest length:CC_MD5_DIGEST_LENGTH];
+}
+
++ (NSData *)sha1:(const char *)data {
+	unsigned char digest[CC_SHA1_DIGEST_LENGTH];
+
+	CC_SHA1(data, strlen(data), digest);
+	return [NSData dataWithBytes:digest length:CC_SHA1_DIGEST_LENGTH];
+}
+
 
 @end
