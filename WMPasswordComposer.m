@@ -12,7 +12,17 @@
 
 @implementation WMPasswordComposer
 
-- (NSString *)generatePasswordForDomain:(NSString *)domain withMasterPassword:(NSString *)master_pass
+- (NSString *)generateMD5PasswordForDomain:(NSString *)domain withMasterPassword:(NSString *)master_pass
+{
+	return [self generatePasswordForDomain:domain withMasterPassword:master_pass usingDigest:WMPasswordComposerMD5Digest base64Encode:NO ensureAlphnumeric:NO];
+}
+
+- (NSString *)generateSHA1PasswordForDomain:(NSString *)domain withMasterPassword:(NSString *)master_pass
+{
+	return [self generatePasswordForDomain:domain withMasterPassword:master_pass usingDigest:WMPasswordComposerSHA1Digest base64Encode:YES ensureAlphnumeric:YES];
+}
+
+- (NSString *)generatePasswordForDomain:(NSString *)domain withMasterPassword:(NSString *)master_pass usingDigest:(WMPasswordComposerDigest)digest_method base64Encode:(bool)base64_encode ensureAlphnumeric:(bool)ensure_alphanumeric;
 {
 	const char *data;
 	NSData *result;

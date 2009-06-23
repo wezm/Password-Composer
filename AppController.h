@@ -11,6 +11,7 @@
     IBOutlet id master_password;
     IBOutlet id message_label;
     IBOutlet id status_item_menu;
+    IBOutlet id digest_method;
 }
 
 - (IBAction)generatePassword:(id)sender;

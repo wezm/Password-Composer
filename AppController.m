@@ -15,8 +15,21 @@
 }
 
 - (IBAction)generatePassword:(id)sender {
-	NSString *pw = [composer generatePasswordForDomain:[domain stringValue] withMasterPassword:[master_password stringValue]];
+	NSString *pw;
 	NSPasteboard *pasteboard = [NSPasteboard pasteboardWithName:NSGeneralPboard];
+
+	switch([digest_method indexOfSelectedItem] + 1) // TODO make this nicer
+	{
+		case WMPasswordComposerMD5Digest:
+			pw = [composer generateMD5PasswordForDomain:[domain stringValue] withMasterPassword:[master_password stringValue]];
+			break;
+		case WMPasswordComposerSHA1Digest:
+			pw = [composer generateSHA1PasswordForDomain:[domain stringValue] withMasterPassword:[master_password stringValue]];
+			break;
+		default:
+			NSLog(@"Unknown digest method selected");
+			return;
+	}
 
 	[pasteboard declareTypes:[NSArray arrayWithObject:NSStringPboardType] owner:self];
 	[pasteboard setString:pw forType:NSStringPboardType];
