@@ -6,6 +6,19 @@
 	objectVersion = 45;
 	objects = {
 
+/* Begin PBXAppleScriptBuildPhase section */
+		B1BB3BB20FF0D54F008A1E21 /* AppleScript */ = {
+			isa = PBXAppleScriptBuildPhase;
+			buildActionMask = 2147483647;
+			contextName = "";
+			files = (
+				B1BB3BB80FF0D72F008A1E21 /* Browser Scripting.applescript in AppleScript */,
+			);
+			isSharedContext = 0;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXAppleScriptBuildPhase section */
+
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -16,6 +29,7 @@
 		B1234D730FE7AB3D00FC767C /* NSDataBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = B1234D720FE7AB3D00FC767C /* NSDataBase64.m */; };
 		B1234D790FE7BE7000FC767C /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B1234D780FE7BE7000FC767C /* libcrypto.dylib */; };
 		B1234E1A0FEE31FE00FC767C /* WMFrontmostBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = B1234E190FEE31FE00FC767C /* WMFrontmostBrowser.m */; };
+		B1BB3BB80FF0D72F008A1E21 /* Browser Scripting.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = B1BB3BB70FF0D72F008A1E21 /* Browser Scripting.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +50,9 @@
 		B1234D710FE7AB3D00FC767C /* NSDataBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataBase64.h; sourceTree = "<group>"; };
 		B1234D720FE7AB3D00FC767C /* NSDataBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataBase64.m; sourceTree = "<group>"; };
 		B1234D780FE7BE7000FC767C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
-		B1234E130FEE316E00FC767C /* Password Composer.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.scpt; path = "Password Composer.scpt"; sourceTree = "<group>"; };
 		B1234E180FEE31FE00FC767C /* WMFrontmostBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMFrontmostBrowser.h; sourceTree = "<group>"; };
 		B1234E190FEE31FE00FC767C /* WMFrontmostBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMFrontmostBrowser.m; sourceTree = "<group>"; };
+		B1BB3BB70FF0D72F008A1E21 /* Browser Scripting.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = "Browser Scripting.applescript"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +134,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B1234E130FEE316E00FC767C /* Password Composer.scpt */,
+				B1BB3BB70FF0D72F008A1E21 /* Browser Scripting.applescript */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -144,6 +158,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Password Composer" */;
 			buildPhases = (
+				B1BB3BB20FF0D54F008A1E21 /* AppleScript */,
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,

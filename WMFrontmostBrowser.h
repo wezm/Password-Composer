@@ -7,12 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Carbon/Carbon.h>
 
+#define WMPasswordComposerHandlerName @"WMPasswordComposerHandlerName"
 
 @interface WMFrontmostBrowser : NSObject {
-
+	NSAppleScript *browser_script;
 }
 
 - (NSDictionary *)activeBrowser;
+- (NSURL *)currentURL;
 
 @end

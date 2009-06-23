@@ -1,8 +1,10 @@
 #import <Cocoa/Cocoa.h>
 #import "WMPasswordComposer.h"
+#import "WMFrontmostBrowser.h"
 
 @interface AppController : NSObject {
 	WMPasswordComposer *composer;
+	WMFrontmostBrowser *browser;
 	NSStatusItem *status_item;
 	
     IBOutlet id domain;

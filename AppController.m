@@ -1,12 +1,12 @@
 #import "AppController.h"
-#import "WMFrontmostBrowser.h"
 
 @implementation AppController
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	NSStatusBar *status_bar = [NSStatusBar systemStatusBar];
 	composer = [[WMPasswordComposer alloc] init];
-	
+	browser = [[WMFrontmostBrowser alloc] init];
+
 	status_item = [status_bar statusItemWithLength:NSSquareStatusItemLength];
 	[status_item setTitle:@"★"];
 	[status_item setMenu:status_item_menu];
@@ -42,11 +42,11 @@
 }
 
 - (IBAction)getHostnameFromBrowser:(id)sender {
-	WMFrontmostBrowser *browser = [[WMFrontmostBrowser alloc] init];
+	NSURL *url = [browser currentURL];
 	
-	[browser activeBrowser];
-	
-	[browser release];
+	if(url != nil) {
+		[domain setStringValue:[url host]];
+	}
 }
 
 - (void)hideMessageLabel {
