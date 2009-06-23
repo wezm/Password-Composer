@@ -1,0 +1,10 @@
+Thanks
+======
+
+* [BNZHex][BNZhex]
+* [NSData base64 category][base64]
+* [Dynamically targeting applications with AppleScript][dynas]
+
+[BNZhex]: http://weblog.bignerdranch.com/?p=20
+[base64]: http://www.cocoadev.com/index.pl?BaseSixtyFour
+[dynas]: http://daringfireball.net/2009/01/applescripts_targetting_safari_or_webkit

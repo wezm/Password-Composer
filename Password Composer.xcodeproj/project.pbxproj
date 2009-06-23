@@ -57,7 +57,7 @@
 		B1BB3C6C0FF10246008A1E21 /* BNZHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNZHex.h; sourceTree = "<group>"; };
 		B1BB3C6D0FF10246008A1E21 /* BNZHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNZHex.m; sourceTree = "<group>"; };
 		B1BB3C700FF10288008A1E21 /* NOTES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NOTES; sourceTree = "<group>"; };
-		B1BB3C710FF102A5008A1E21 /* THANKS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = THANKS; sourceTree = "<group>"; };
+		B1BB3C710FF102A5008A1E21 /* THANKS.mkdn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = THANKS.mkdn; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				B1BB3C700FF10288008A1E21 /* NOTES */,
-				B1BB3C710FF102A5008A1E21 /* THANKS */,
+				B1BB3C710FF102A5008A1E21 /* THANKS.mkdn */,
 			);
 			name = Documentation;
 			sourceTree = "<group>";
