@@ -10,6 +10,7 @@
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="29"/>
 			<integer value="372"/>
+			<integer value="480"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1390,6 +1391,14 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
+					<object class="NSMenuItem" id="164653880">
+						<reference key="NSMenu" ref="1013381123"/>
+						<string key="NSTitle">Defaut Browser</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
 				</object>
 			</object>
 		</object>
@@ -2003,6 +2012,14 @@
 						<reference key="destination" ref="88257624"/>
 					</object>
 					<int key="connectionID">499</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">getDefaultBrowser:</string>
+						<reference key="source" ref="349497802"/>
+						<reference key="destination" ref="164653880"/>
+					</object>
+					<int key="connectionID">501</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3022,6 +3039,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="707759112"/>
 							<reference ref="715996821"/>
+							<reference ref="164653880"/>
 						</object>
 						<reference key="parent" ref="1049"/>
 						<string key="objectName">StatusItemMenu</string>
@@ -3087,6 +3105,11 @@
 						<int key="objectID">497</int>
 						<reference key="object" ref="817512000"/>
 						<reference key="parent" ref="686468969"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">500</int>
+						<reference key="object" ref="164653880"/>
+						<reference key="parent" ref="1013381123"/>
 					</object>
 				</object>
 			</object>
@@ -3309,6 +3332,7 @@
 					<string>497.IBPluginDependency</string>
 					<string>5.IBPluginDependency</string>
 					<string>5.ImportedFromIB2</string>
+					<string>500.IBPluginDependency</string>
 					<string>56.IBPluginDependency</string>
 					<string>56.ImportedFromIB2</string>
 					<string>57.IBEditorWindowLastContentRect</string>
@@ -3454,7 +3478,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{{525, 802}, {197, 73}}</string>
-					<string>{{-1073, 285}, {478, 20}}</string>
+					<string>{{159, 247}, {478, 20}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{74, 862}</string>
@@ -3477,8 +3501,8 @@
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>{{-922, 484}, {397, 165}}</string>
-					<string>{{-922, 484}, {397, 165}}</string>
+					<string>{{339, 423}, {397, 165}}</string>
+					<string>{{339, 423}, {397, 165}}</string>
 					<reference ref="9"/>
 					<string>{{33, 99}, {480, 360}}</string>
 					<string>{3.40282e+38, 3.40282e+38}</string>
@@ -3546,7 +3570,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{-769, 561}, {184, 43}}</string>
+					<string>{{351, 321}, {184, 63}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3560,6 +3584,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{{219, 102}, {245, 183}}</string>
@@ -3615,7 +3640,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">499</int>
+			<int key="maxID">501</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3628,10 +3653,12 @@
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>generatePassword:</string>
+							<string>getDefaultBrowser:</string>
 							<string>getHostnameFromBrowser:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>

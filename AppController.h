@@ -18,5 +18,6 @@
 
 - (IBAction)generatePassword:(id)sender;
 - (IBAction)getHostnameFromBrowser:(id)sender;
+- (IBAction)getDefaultBrowser:(id)sender;
 
 @end

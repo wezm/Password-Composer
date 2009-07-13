@@ -10,6 +10,7 @@
 	status_item = [status_bar statusItemWithLength:NSSquareStatusItemLength];
 	[status_item setTitle:@"★"];
 	[status_item setMenu:status_item_menu];
+	[status_item setHighlightMode:YES];
 	
 	[status_item retain];
 }
@@ -46,6 +47,13 @@
 	
 	if(url != nil) {
 		[domain setStringValue:[url host]];
+	}
+}
+
+- (IBAction)getDefaultBrowser:(id)sender {
+	NSDictionary *browser_dict = [browser defaultBrowser];
+	if(browser_dict != nil) {
+		NSLog(@"Got default browser %@", browser_dict);
 	}
 }
 

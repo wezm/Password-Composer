@@ -7,6 +7,8 @@
 //
 
 #import "WMFrontmostBrowser.h"
+#import <stdlib.h>
+#import <string.h>
 
 static NSDictionary *browsers = nil;
 
@@ -138,6 +140,65 @@ static NSDictionary *browsers = nil;
 	[active_browser setObject:scripting_handler_name forKey:WMPasswordComposerHandlerName];
 	
 	return active_browser;
+}
+
+- (NSDictionary *)defaultBrowser {
+//	NSURL *appURL = nil;
+	CFURLRef default_browser_url = NULL;
+	NSString *default_browser_path;
+    OSStatus err;
+	NSEnumerator *processesEnum;
+	NSDictionary *process;
+	char default_browser_abs_path[PATH_MAX];
+	char application_abs_path[PATH_MAX];
+	
+    err = LSGetApplicationForURL((CFURLRef)[NSURL URLWithString: @"http:"],
+								 kLSRolesAll, NULL, &default_browser_url);
+
+	if (err != noErr) {
+		NSLog(@"LSGetApplicationForURL error: %ld", err);
+		return nil;
+	}
+	
+	// Get filesystem path from URL
+	default_browser_path = (NSString *)CFURLCopyFileSystemPath(default_browser_url, kCFURLPOSIXPathStyle);
+	NSAssert(default_browser_path != nil, @"default_browser_path is nil");
+	if(realpath([default_browser_path UTF8String], default_browser_abs_path) == NULL) {
+		NSLog(@"realpath(%@) == NULL", [default_browser_path UTF8String]);
+		return nil;
+	}
+	
+	// appURL autoreleased?
+	NSLog(default_browser_path);
+	processesEnum = [[[NSWorkspace sharedWorkspace] launchedApplications] objectEnumerator];
+	while ((process = [processesEnum nextObject])) {
+		NSString *applicationPath = [process objectForKey:@"NSApplicationPath"];
+		if(realpath([applicationPath UTF8String], application_abs_path) == NULL) {
+			NSLog(@"realpath(%@) == NULL", [applicationPath UTF8String]);
+			return nil;
+		}
+		
+		// Got the normalised paths to the default browser and the application,
+		// see if they are the same
+		NSLog(@"strcmp(%s, %s)", application_abs_path, default_browser_abs_path);
+		if(strcmp(application_abs_path, default_browser_abs_path) == 0) {
+			// Found default browser
+			break;
+		}
+		
+		
+//		if(applicationPath != nil && [) {
+//			
+//			
+//		}
+//		if ([ITUNES_BUNDLE_ID caseInsensitiveCompare:[process objectForKey:@"NSApplicationBundleIdentifier"]] == NSOrderedSame) {
+//			break; //this is iTunes!
+//		}
+		
+		//NSLog([process description]);
+	}
+	
+	return process;
 }
 
 - (NSURL *)currentURL

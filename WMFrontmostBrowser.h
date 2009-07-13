@@ -16,6 +16,7 @@
 }
 
 - (NSDictionary *)activeBrowser;
+- (NSDictionary *)defaultBrowser;
 - (NSURL *)currentURL;
 
 @end
