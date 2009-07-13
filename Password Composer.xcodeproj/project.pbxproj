@@ -29,6 +29,8 @@
 		B1234D730FE7AB3D00FC767C /* NSDataBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = B1234D720FE7AB3D00FC767C /* NSDataBase64.m */; };
 		B1234D790FE7BE7000FC767C /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B1234D780FE7BE7000FC767C /* libcrypto.dylib */; };
 		B1234E1A0FEE31FE00FC767C /* WMFrontmostBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = B1234E190FEE31FE00FC767C /* WMFrontmostBrowser.m */; };
+		B1928584100B48BD002964C8 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1928582100B48BD002964C8 /* Preferences.xib */; };
+		B1928588100B4928002964C8 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1928587100B4928002964C8 /* PreferencesController.m */; };
 		B1BB3BB80FF0D72F008A1E21 /* Browser Scripting.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = B1BB3BB70FF0D72F008A1E21 /* Browser Scripting.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		B1BB3C6E0FF10246008A1E21 /* BNZHex.m in Sources */ = {isa = PBXBuildFile; fileRef = B1BB3C6D0FF10246008A1E21 /* BNZHex.m */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,9 @@
 		B1234D780FE7BE7000FC767C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
 		B1234E180FEE31FE00FC767C /* WMFrontmostBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMFrontmostBrowser.h; sourceTree = "<group>"; };
 		B1234E190FEE31FE00FC767C /* WMFrontmostBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMFrontmostBrowser.m; sourceTree = "<group>"; };
+		B1928583100B48BD002964C8 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
+		B1928586100B4928002964C8 /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
+		B1928587100B4928002964C8 /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		B1BB3BB70FF0D72F008A1E21 /* Browser Scripting.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = "Browser Scripting.applescript"; sourceTree = "<group>"; };
 		B1BB3C6C0FF10246008A1E21 /* BNZHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNZHex.h; sourceTree = "<group>"; };
 		B1BB3C6D0FF10246008A1E21 /* BNZHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNZHex.m; sourceTree = "<group>"; };
@@ -86,6 +91,8 @@
 				B1234D720FE7AB3D00FC767C /* NSDataBase64.m */,
 				B1234E180FEE31FE00FC767C /* WMFrontmostBrowser.h */,
 				B1234E190FEE31FE00FC767C /* WMFrontmostBrowser.m */,
+				B1928586100B4928002964C8 /* PreferencesController.h */,
+				B1928587100B4928002964C8 /* PreferencesController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -126,6 +133,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				B1928582100B48BD002964C8 /* Preferences.xib */,
 			);
 			name = "Password Composer";
 			sourceTree = "<group>";
@@ -214,6 +222,7 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				B1928584100B48BD002964C8 /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +239,7 @@
 				B1234D730FE7AB3D00FC767C /* NSDataBase64.m in Sources */,
 				B1234E1A0FEE31FE00FC767C /* WMFrontmostBrowser.m in Sources */,
 				B1BB3C6E0FF10246008A1E21 /* BNZHex.m in Sources */,
+				B1928588100B4928002964C8 /* PreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +260,14 @@
 				1DDD58150DA1D0A300B32029 /* English */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		B1928582100B48BD002964C8 /* Preferences.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B1928583100B48BD002964C8 /* English */,
+			);
+			name = Preferences.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

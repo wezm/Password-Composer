@@ -1391,14 +1391,6 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="164653880">
-						<reference key="NSMenu" ref="1013381123"/>
-						<string key="NSTitle">Defaut Browser</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="35465992"/>
-						<reference key="NSMixedImage" ref="502551668"/>
-					</object>
 				</object>
 			</object>
 		</object>
@@ -2012,14 +2004,6 @@
 						<reference key="destination" ref="88257624"/>
 					</object>
 					<int key="connectionID">499</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">getDefaultBrowser:</string>
-						<reference key="source" ref="349497802"/>
-						<reference key="destination" ref="164653880"/>
-					</object>
-					<int key="connectionID">501</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3039,7 +3023,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="707759112"/>
 							<reference ref="715996821"/>
-							<reference ref="164653880"/>
 						</object>
 						<reference key="parent" ref="1049"/>
 						<string key="objectName">StatusItemMenu</string>
@@ -3105,11 +3088,6 @@
 						<int key="objectID">497</int>
 						<reference key="object" ref="817512000"/>
 						<reference key="parent" ref="686468969"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">500</int>
-						<reference key="object" ref="164653880"/>
-						<reference key="parent" ref="1013381123"/>
 					</object>
 				</object>
 			</object>
@@ -3332,7 +3310,6 @@
 					<string>497.IBPluginDependency</string>
 					<string>5.IBPluginDependency</string>
 					<string>5.ImportedFromIB2</string>
-					<string>500.IBPluginDependency</string>
 					<string>56.IBPluginDependency</string>
 					<string>56.ImportedFromIB2</string>
 					<string>57.IBEditorWindowLastContentRect</string>
@@ -3570,7 +3547,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{351, 321}, {184, 63}}</string>
+					<string>{{351, 341}, {184, 43}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3584,7 +3561,6 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{{219, 102}, {245, 183}}</string>

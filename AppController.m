@@ -50,13 +50,6 @@
 	}
 }
 
-- (IBAction)getDefaultBrowser:(id)sender {
-	NSDictionary *browser_dict = [browser defaultBrowser];
-	if(browser_dict != nil) {
-		NSLog(@"Got default browser %@", browser_dict);
-	}
-}
-
 - (void)hideMessageLabel {
 	[message_label setHidden:YES];
 }
