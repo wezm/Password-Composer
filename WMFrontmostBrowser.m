@@ -123,23 +123,10 @@ static NSDictionary *browsers = nil;
 
 
 - (NSDictionary *)activeBrowser {
-	NSString *bundle_id;
-	NSString *scripting_handler_name;
 	NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
 	NSDictionary *activeApp = [workspace activeApplication];
-	NSMutableDictionary *active_browser;
-	NSAssert(activeApp != nil, @"activeApplication is nil");
 	
-	bundle_id = [activeApp objectForKey:@"NSApplicationBundleIdentifier"];
-	NSAssert(bundle_id != nil, @"activeApplication NSApplicationBundleIdentifier is nil");
-
-	scripting_handler_name = [browsers objectForKey:bundle_id];
-	if(scripting_handler_name == nil) return nil; // Unknown app or no handler
-
-	active_browser = [NSMutableDictionary dictionaryWithDictionary:activeApp];
-	[active_browser setObject:scripting_handler_name forKey:WMPasswordComposerHandlerName];
-	
-	return active_browser;
+	return [self addHandlerNameForBrowser:activeApp];
 }
 
 - (NSDictionary *)defaultBrowser {
@@ -174,7 +161,7 @@ static NSDictionary *browsers = nil;
 	while ((process = [processesEnum nextObject])) {
 		NSString *applicationPath = [process objectForKey:@"NSApplicationPath"];
 		if(realpath([applicationPath UTF8String], application_abs_path) == NULL) {
-			NSLog(@"realpath(%@) == NULL", [applicationPath UTF8String]);
+			//NSLog(@"realpath(%@) == NULL", [applicationPath UTF8String]);
 			return nil;
 		}
 		
@@ -185,29 +172,44 @@ static NSDictionary *browsers = nil;
 			// Found default browser
 			break;
 		}
-		
-		
-//		if(applicationPath != nil && [) {
-//			
-//			
-//		}
-//		if ([ITUNES_BUNDLE_ID caseInsensitiveCompare:[process objectForKey:@"NSApplicationBundleIdentifier"]] == NSOrderedSame) {
-//			break; //this is iTunes!
-//		}
-		
-		//NSLog([process description]);
 	}
 	
-	return process;
+	return [self addHandlerNameForBrowser:process];
+}
+
+- (NSDictionary *)addHandlerNameForBrowser:(NSDictionary *)browser {
+	NSMutableDictionary *browser_with_handler;
+	NSString *bundle_id;
+	NSString *scripting_handler_name;
+
+	if(browser == nil) return browser;
+	
+	bundle_id = [browser objectForKey:@"NSApplicationBundleIdentifier"];
+	NSAssert(bundle_id != nil, @"addHandlerNameForBrowser NSApplicationBundleIdentifier is nil");
+	
+	scripting_handler_name = [browsers objectForKey:bundle_id];
+	if(scripting_handler_name == nil) return nil; // Unknown app or no handler
+	
+	browser_with_handler = [NSMutableDictionary dictionaryWithDictionary:browser];
+	[browser_with_handler setObject:scripting_handler_name forKey:WMPasswordComposerHandlerName];
+	
+	return [NSDictionary dictionaryWithDictionary:browser_with_handler];
 }
 
 - (NSURL *)currentURL
 {
 	NSAppleEventDescriptor *result;
-	NSDictionary *errors;
+	NSDictionary *errors = nil;
 	NSDictionary *browser = [self activeBrowser];
 	
-	if(browser == nil) return nil; // No browser running
+	if(browser == nil) {
+		// See if the default browser is running and use that instead
+		browser = [self defaultBrowser];
+	}
+		
+	if(browser == nil) {
+		return nil; // No browser running
+	}
 	
 	// Construct the argument to the handler
 	NSAppleEventDescriptor *browser_name = [NSAppleEventDescriptor descriptorWithString:[browser objectForKey:@"NSApplicationName"]];

@@ -18,5 +18,6 @@
 - (NSDictionary *)activeBrowser;
 - (NSDictionary *)defaultBrowser;
 - (NSURL *)currentURL;
+- (NSDictionary *)addHandlerNameForBrowser:(NSDictionary *)browser;
 
 @end
