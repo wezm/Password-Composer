@@ -50,6 +50,16 @@
 	}
 }
 
+- (IBAction)summonWindow:(id)sender {
+	[self getHostnameFromBrowser:sender];
+	
+	if (![NSApp isActive]) {
+		[NSApp activateIgnoringOtherApps:YES];
+		//[NSApp arrangeInFront:nil];
+	}
+	[main_window makeKeyAndOrderFront:sender];
+}
+
 - (void)hideMessageLabel {
 	[message_label setHidden:YES];
 }

@@ -17,6 +17,7 @@
 }
 
 - (IBAction)generatePassword:(id)sender;
+- (IBAction)summonWindow:(id)sender;
 - (IBAction)getHostnameFromBrowser:(id)sender;
 
 @end

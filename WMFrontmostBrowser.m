@@ -167,7 +167,6 @@ static NSDictionary *browsers = nil;
 		
 		// Got the normalised paths to the default browser and the application,
 		// see if they are the same
-		NSLog(@"strcmp(%s, %s)", application_abs_path, default_browser_abs_path);
 		if(strcmp(application_abs_path, default_browser_abs_path) == 0) {
 			// Found default browser
 			break;
