@@ -53,7 +53,7 @@
 	NSRange truncate_range = NSMakeRange(WMPasswordComposerBaseLen, [password length] - WMPasswordComposerBaseLen);
 	[password deleteCharactersInRange:truncate_range];
 	
-	if(ensure_alphanumeric) [password appendString:@"1e"];
+	if(ensure_alphanumeric) [password appendString:@"1a"];
 	
 	return password;
 }
